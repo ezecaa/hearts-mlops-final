@@ -48,5 +48,5 @@ El objetivo es disponibilizar nuestro modelo de predicción de enfermedades card
 
 🤝 Integrantes del equipo
 
-    - Luigi
+    - Luis Santamaría
     - Ezequiel Caamaño
