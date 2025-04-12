@@ -48,8 +48,5 @@ El objetivo es disponibilizar nuestro modelo de predicción de enfermedades card
 
 🤝 Integrantes del equipo
 
-    
-
-📝 Licencia
-
-Este proyecto está bajo la Licencia MIT.
+    - Luigi
+    - Ezequiel Caamaño
