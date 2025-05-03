@@ -1,5 +1,9 @@
 # Proyecto Final - MLOps Pipeline: Predicción de Accidentes Cerebrovasculares
 
+Alumnos: Santamarìa, Luis
+         Caamaño, Ezequiel
+Cohorte: 18va.
+
 
 
 
