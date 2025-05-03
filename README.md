@@ -75,11 +75,11 @@ docker volume rm (docker volume ls -q)
 
 ## Diagrama de integración 
 
-![](attachmentMD/Pasted image 20250503143018.png)
+![](attachmentMD/Pasted%20image%2020250503143018.png)
 
 ## Orden de ejecución de la app
 
-![](attachmentMD/Pasted image 20250503143404.png)
+![](attachmentMD/Pasted%20image%2020250503143404.png)
 
 #### Bloque 1 
 Integración de un modelo ML con persistencia(empaquetado) entrenado en stroke_model.pth , Preprocesamiento de datos en stroke_preprocessor.pkl con la app en python 
