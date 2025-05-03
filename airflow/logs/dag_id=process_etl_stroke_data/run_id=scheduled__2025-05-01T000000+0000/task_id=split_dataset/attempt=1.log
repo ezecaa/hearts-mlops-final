@@ -1,0 +1,76 @@
+[2025-05-02T16:00:04.895+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: process_etl_stroke_data.split_dataset scheduled__2025-05-01T00:00:00+00:00 [queued]>
+[2025-05-02T16:00:04.904+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: process_etl_stroke_data.split_dataset scheduled__2025-05-01T00:00:00+00:00 [queued]>
+[2025-05-02T16:00:04.904+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-05-02T16:00:04.919+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonVirtualenvDecoratedOperator): split_dataset> on 2025-05-01 00:00:00+00:00
+[2025-05-02T16:00:04.926+0000] {standard_task_runner.py:60} INFO - Started process 656 to run task
+[2025-05-02T16:00:04.929+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'process_etl_stroke_data', 'split_dataset', 'scheduled__2025-05-01T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_processing.py', '--cfg-path', '/tmp/tmpfzzf_292']
+[2025-05-02T16:00:04.931+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask split_dataset
+[2025-05-02T16:00:04.988+0000] {task_command.py:423} INFO - Running <TaskInstance: process_etl_stroke_data.split_dataset scheduled__2025-05-01T00:00:00+00:00 [running]> on host 936bf26779ff
+[2025-05-02T16:00:05.064+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Brain Stroke Project' AIRFLOW_CTX_DAG_ID='process_etl_stroke_data' AIRFLOW_CTX_TASK_ID='split_dataset' AIRFLOW_CTX_EXECUTION_DATE='2025-05-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-01T00:00:00+00:00'
+[2025-05-02T16:00:05.067+0000] {process_utils.py:182} INFO - Executing cmd: /usr/local/bin/python -m virtualenv /tmp/venvaiv3ul_m --system-site-packages --python=python
+[2025-05-02T16:00:05.076+0000] {process_utils.py:186} INFO - Output:
+[2025-05-02T16:00:05.915+0000] {process_utils.py:190} INFO - created virtual environment CPython3.8.18.final.0-64 in 498ms
+[2025-05-02T16:00:05.916+0000] {process_utils.py:190} INFO -   creator CPython3Posix(dest=/tmp/venvaiv3ul_m, clear=False, no_vcs_ignore=False, global=True)
+[2025-05-02T16:00:05.916+0000] {process_utils.py:190} INFO -   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/tmp/tmpo1ms6qu6)
+[2025-05-02T16:00:05.917+0000] {process_utils.py:190} INFO -     added seed packages: pip==23.3.1, setuptools==69.0.2, wheel==0.42.0
+[2025-05-02T16:00:05.917+0000] {process_utils.py:190} INFO -   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+[2025-05-02T16:00:05.950+0000] {process_utils.py:182} INFO - Executing cmd: /tmp/venvaiv3ul_m/bin/pip install -r /tmp/venvaiv3ul_m/requirements.txt
+[2025-05-02T16:00:05.957+0000] {process_utils.py:186} INFO - Output:
+[2025-05-02T16:00:06.591+0000] {process_utils.py:190} INFO - WARNING: The directory '/home/***/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+[2025-05-02T16:00:06.825+0000] {process_utils.py:190} INFO - Collecting awswrangler==3.9.1 (from -r /tmp/venvaiv3ul_m/requirements.txt (line 1))
+[2025-05-02T16:00:06.873+0000] {process_utils.py:190} INFO -   Downloading awswrangler-3.9.1-py3-none-any.whl.metadata (17 kB)
+[2025-05-02T16:00:06.908+0000] {process_utils.py:190} INFO - Requirement already satisfied: boto3<2.0.0,>=1.20.32 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (1.37.38)
+[2025-05-02T16:00:06.909+0000] {process_utils.py:190} INFO - Requirement already satisfied: botocore<2.0.0,>=1.23.32 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (1.37.38)
+[2025-05-02T16:00:06.910+0000] {process_utils.py:190} INFO - Requirement already satisfied: numpy<2.0,>=1.18 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (1.24.4)
+[2025-05-02T16:00:06.911+0000] {process_utils.py:190} INFO - Requirement already satisfied: packaging<25.0,>=21.1 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (23.2)
+[2025-05-02T16:00:06.911+0000] {process_utils.py:190} INFO - Requirement already satisfied: pandas<2.1.0,>=1.2.0 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (2.0.3)
+[2025-05-02T16:00:06.912+0000] {process_utils.py:190} INFO - Requirement already satisfied: pyarrow>=8.0.0 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (14.0.2)
+[2025-05-02T16:00:06.913+0000] {process_utils.py:190} INFO - Requirement already satisfied: typing-extensions<5.0.0,>=4.4.0 in /home/***/.local/lib/python3.8/site-packages (from awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (4.9.0)
+[2025-05-02T16:00:06.916+0000] {process_utils.py:190} INFO - Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /home/***/.local/lib/python3.8/site-packages (from boto3<2.0.0,>=1.20.32->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (0.10.0)
+[2025-05-02T16:00:06.917+0000] {process_utils.py:190} INFO - Requirement already satisfied: s3transfer<0.12.0,>=0.11.0 in /home/***/.local/lib/python3.8/site-packages (from boto3<2.0.0,>=1.20.32->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (0.11.5)
+[2025-05-02T16:00:06.922+0000] {process_utils.py:190} INFO - Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /home/***/.local/lib/python3.8/site-packages (from botocore<2.0.0,>=1.23.32->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (2.8.2)
+[2025-05-02T16:00:06.924+0000] {process_utils.py:190} INFO - Requirement already satisfied: urllib3<1.27,>=1.25.4 in /home/***/.local/lib/python3.8/site-packages (from botocore<2.0.0,>=1.23.32->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (1.26.18)
+[2025-05-02T16:00:06.990+0000] {process_utils.py:190} INFO - Requirement already satisfied: pytz>=2020.1 in /home/***/.local/lib/python3.8/site-packages (from pandas<2.1.0,>=1.2.0->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (2023.3.post1)
+[2025-05-02T16:00:06.991+0000] {process_utils.py:190} INFO - Requirement already satisfied: tzdata>=2022.1 in /home/***/.local/lib/python3.8/site-packages (from pandas<2.1.0,>=1.2.0->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (2023.4)
+[2025-05-02T16:00:06.995+0000] {process_utils.py:190} INFO - Requirement already satisfied: six>=1.5 in /home/***/.local/lib/python3.8/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<2.0.0,>=1.23.32->awswrangler==3.9.1->-r /tmp/venvaiv3ul_m/requirements.txt (line 1)) (1.16.0)
+[2025-05-02T16:00:07.027+0000] {process_utils.py:190} INFO - Downloading awswrangler-3.9.1-py3-none-any.whl (381 kB)
+[2025-05-02T16:00:07.064+0000] {process_utils.py:190} INFO -    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 381.7/381.7 kB 10.8 MB/s eta 0:00:00
+[2025-05-02T16:00:09.310+0000] {process_utils.py:190} INFO - Installing collected packages: awswrangler
+[2025-05-02T16:00:09.501+0000] {process_utils.py:190} INFO - Successfully installed awswrangler-3.9.1
+[2025-05-02T16:00:09.587+0000] {process_utils.py:190} INFO - 
+[2025-05-02T16:00:09.588+0000] {process_utils.py:190} INFO - [notice] A new release of pip is available: 23.3.1 -> 25.0.1
+[2025-05-02T16:00:09.588+0000] {process_utils.py:190} INFO - [notice] To update, run: python -m pip install --upgrade pip
+[2025-05-02T16:00:09.738+0000] {process_utils.py:182} INFO - Executing cmd: /tmp/venvaiv3ul_m/bin/python /tmp/venv-callva3yz7t8/script.py /tmp/venv-callva3yz7t8/script.in /tmp/venv-callva3yz7t8/script.out /tmp/venv-callva3yz7t8/string_args.txt /tmp/venv-callva3yz7t8/termination.log
+[2025-05-02T16:00:09.752+0000] {process_utils.py:186} INFO - Output:
+[2025-05-02T16:00:10.379+0000] {process_utils.py:190} INFO - WARNING:root:/opt/***/logs/scheduler/latest already exists as a dir/file. Skip creating symlink.
+[2025-05-02T16:00:12.114+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.113+0000[0m] {[34mscript.py:[0m46} INFO[0m - Starting to read processed dataset from s3://data/processed/stroke_data.csv[0m
+[2025-05-02T16:00:12.127+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.126+0000[0m] {[34mcredentials.py:[0m1213} INFO[0m - Found credentials in environment variables.[0m
+[2025-05-02T16:00:12.265+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.264+0000[0m] {[34mconfigprovider.py:[0m998} INFO[0m - Found endpoint for s3 via: environment_service.[0m
+[2025-05-02T16:00:12.332+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.332+0000[0m] {[34mscript.py:[0m51} INFO[0m - Processed dataset loaded successfully from s3://data/processed/stroke_data.csv[0m
+[2025-05-02T16:00:12.339+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.338+0000[0m] {[34mscript.py:[0m59} INFO[0m - Target column for the dataset: log_cnt[0m
+[2025-05-02T16:00:12.340+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.339+0000[0m] {[34mscript.py:[0m63} ERROR[0m - Target column 'log_cnt' not found in DataFrame. Available columns: ['age', 'hypertension', 'heart_disease', 'avg_glucose_level', 'bmi', 'stroke', 'gender_Male', 'gender_Other', 'ever_married_Yes', 'work_type_Never_worked', 'work_type_Private', 'work_type_Self-employed', 'work_type_children', 'residence_type_Urban', 'smoking_status_formerly smoked', 'smoking_status_never smoked', 'smoking_status_smokes'][0m
+[2025-05-02T16:00:12.347+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.347+0000[0m] {[34mvariable.py:[0m245} WARNING[0m - The variable target_col is defined in the LocalFilesystemBackend secrets backend, which takes precedence over reading from the database. The value in the database will be updated, but to read it you have to delete the conflicting variable from LocalFilesystemBackend[0m
+[2025-05-02T16:00:12.812+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.811+0000[0m] {[34mcrypto.py:[0m82} WARNING[0m - empty cryptography key - values will not be stored encrypted.[0m
+[2025-05-02T16:00:12.816+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.815+0000[0m] {[34mscript.py:[0m67} INFO[0m - Setting target column to default value: stroke[0m
+[2025-05-02T16:00:12.819+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.818+0000[0m] {[34mscript.py:[0m79} INFO[0m - Features and target separated successfully[0m
+[2025-05-02T16:00:12.932+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.932+0000[0m] {[34mscript.py:[0m96} INFO[0m - Test size for dataset split: 0.3[0m
+[2025-05-02T16:00:12.941+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.941+0000[0m] {[34mscript.py:[0m103} INFO[0m - Dataset split into training and testing sets successfully[0m
+[2025-05-02T16:00:12.943+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.941+0000[0m] {[34mscript.py:[0m104} INFO[0m - Training set size: (3577, 16), Testing set size: (1533, 16)[0m
+[2025-05-02T16:00:12.943+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.942+0000[0m] {[34mscript.py:[0m109} INFO[0m - Starting to save training and testing datasets to S3/Minio[0m
+[2025-05-02T16:00:12.959+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:12.959+0000[0m] {[34mcredentials.py:[0m1213} INFO[0m - Found credentials in environment variables.[0m
+[2025-05-02T16:00:13.026+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.025+0000[0m] {[34mconfigprovider.py:[0m998} INFO[0m - Found endpoint for s3 via: environment_service.[0m
+[2025-05-02T16:00:13.060+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.060+0000[0m] {[34mscript.py:[0m114} INFO[0m - Training features saved successfully to s3://data/train/stroke_data_X_train.csv[0m
+[2025-05-02T16:00:13.069+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.069+0000[0m] {[34mcredentials.py:[0m1213} INFO[0m - Found credentials in environment variables.[0m
+[2025-05-02T16:00:13.133+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.133+0000[0m] {[34mconfigprovider.py:[0m998} INFO[0m - Found endpoint for s3 via: environment_service.[0m
+[2025-05-02T16:00:13.151+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.151+0000[0m] {[34mscript.py:[0m117} INFO[0m - Testing features saved successfully to s3://data/test/stroke_data_X_test.csv[0m
+[2025-05-02T16:00:13.159+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.159+0000[0m] {[34mcredentials.py:[0m1213} INFO[0m - Found credentials in environment variables.[0m
+[2025-05-02T16:00:13.315+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.314+0000[0m] {[34mconfigprovider.py:[0m998} INFO[0m - Found endpoint for s3 via: environment_service.[0m
+[2025-05-02T16:00:13.330+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.330+0000[0m] {[34mscript.py:[0m120} INFO[0m - Training target saved successfully to s3://data/train/stroke_data_y_train.csv[0m
+[2025-05-02T16:00:13.338+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.338+0000[0m] {[34mcredentials.py:[0m1213} INFO[0m - Found credentials in environment variables.[0m
+[2025-05-02T16:00:13.400+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.399+0000[0m] {[34mconfigprovider.py:[0m998} INFO[0m - Found endpoint for s3 via: environment_service.[0m
+[2025-05-02T16:00:13.419+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.418+0000[0m] {[34mscript.py:[0m123} INFO[0m - Testing target saved successfully to s3://data/test/stroke_data_y_test.csv[0m
+[2025-05-02T16:00:13.421+0000] {process_utils.py:190} INFO - [[34m2025-05-02T16:00:13.419+0000[0m] {[34mscript.py:[0m128} INFO[0m - Dataset splitting and saving completed successfully[0m
+[2025-05-02T16:00:14.005+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-02T16:00:14.018+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=process_etl_stroke_data, task_id=split_dataset, execution_date=20250501T000000, start_date=20250502T160004, end_date=20250502T160014
+[2025-05-02T16:00:14.073+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-02T16:00:14.099+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

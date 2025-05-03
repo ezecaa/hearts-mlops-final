@@ -1,0 +1,73 @@
+2025-05-03 15:01:45,606 - INFO - Iniciando el proceso de entrenamiento y evaluación del modelo...
+2025-05-03 15:01:45,607 - INFO - MLflow configurado en: http://localhost:5000
+2025-05-03 15:01:45,607 - INFO - Cargando datos desde Minio...
+2025-05-03 15:01:45,687 - INFO - Found credentials in environment variables.
+2025-05-03 15:01:45,949 - INFO - Found endpoint for s3 via: environment_service.
+2025-05-03 15:01:46,006 - ERROR - Error durante la ejecución: No files Found on: s3://data/train/stroke_data_X_train_scaled.csv.
+2025-05-03 15:01:46,006 - ERROR - Traceback (most recent call last):
+  File "C:\Users\SAN\Documents\RepoGit\Entregable-OpeApreAuto-I\BrainStroke-CV-Entregable\app\testing_model.py", line 124, in main
+    X_train_df = wr.s3.read_csv("s3://data/train/stroke_data_X_train_scaled.csv")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAN\AppData\Local\Programs\Python\Python312\Lib\site-packages\awswrangler\_utils.py", line 179, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAN\AppData\Local\Programs\Python\Python312\Lib\site-packages\awswrangler\s3\_read_text.py", line 297, in read_csv
+    return _read_text_format(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SAN\AppData\Local\Programs\Python\Python312\Lib\site-packages\awswrangler\s3\_read_text.py", line 112, in _read_text_format
+    raise exceptions.NoFilesFound(f"No files Found on: {path}.")
+awswrangler.exceptions.NoFilesFound: No files Found on: s3://data/train/stroke_data_X_train_scaled.csv.
+
+2025-05-03 15:03:17,627 - INFO - Iniciando el proceso de entrenamiento y evaluación del modelo...
+2025-05-03 15:03:17,628 - INFO - MLflow configurado en: http://localhost:5000
+2025-05-03 15:03:17,628 - INFO - Cargando datos desde Minio...
+2025-05-03 15:03:17,699 - INFO - Found credentials in environment variables.
+2025-05-03 15:03:17,828 - INFO - Found endpoint for s3 via: environment_service.
+2025-05-03 15:03:17,913 - INFO - Found credentials in environment variables.
+2025-05-03 15:03:18,039 - INFO - Found endpoint for s3 via: environment_service.
+2025-05-03 15:03:18,137 - INFO - Found credentials in environment variables.
+2025-05-03 15:03:18,253 - INFO - Found endpoint for s3 via: environment_service.
+2025-05-03 15:03:18,331 - INFO - Found credentials in environment variables.
+2025-05-03 15:03:18,449 - INFO - Found endpoint for s3 via: environment_service.
+2025-05-03 15:03:18,516 - INFO - Dimensiones de los datos: X_train=(3577, 16), y_train=(3577, 1), X_test=(1533, 16), y_test=(1533, 1)
+2025-05-03 15:03:18,516 - INFO - Generando gráficas de correlación...
+2025-05-03 15:03:18,712 - INFO - Gráfica de correlación generada y guardada como 'correlation_with_target.png'
+2025-05-03 15:03:19,181 - INFO - Experiment ID: 1
+2025-05-03 15:03:19,181 - INFO - Tamaño de los conjuntos:
+2025-05-03 15:03:19,181 - INFO - X_train: (3577, 16), y_train: (3577,)
+2025-05-03 15:03:19,181 - INFO - X_test: (1533, 16), y_test: (1533,)
+2025-05-03 15:03:19,181 - INFO - Configurando Grid Search para Random Forest...
+2025-05-03 15:03:19,181 - INFO - Iniciando entrenamiento con GridSearchCV...
+2025-05-03 15:03:19,528 - INFO - MLflow Run ID: defbf7e46da548b6afffd34f88590806
+2025-05-03 15:03:41,187 - INFO - Entrenamiento completado.
+2025-05-03 15:03:41,187 - INFO - Evaluando el modelo en el conjunto de prueba...
+2025-05-03 15:03:41,321 - INFO - Generando gráfico de importancia de características...
+2025-05-03 15:03:41,450 - INFO - Gráfico de importancia guardado como 'feature_importance.png'
+2025-05-03 15:03:41,450 - INFO - Registrando parámetros y métricas en MLflow...
+2025-05-03 15:03:41,756 - INFO - Found credentials in environment variables.
+2025-05-03 15:03:42,554 - INFO - Registrando el modelo en MLflow...
+2025-05-03 15:03:49,641 - INFO - 
+Resultados del mejor modelo Random Forest:
+2025-05-03 15:03:49,644 - INFO - Accuracy: 0.9400
+2025-05-03 15:03:49,644 - INFO - Precision: 0.3023
+2025-05-03 15:03:49,644 - INFO - Recall: 0.1733
+2025-05-03 15:03:49,644 - INFO - F1 Score: 0.2203
+2025-05-03 15:03:49,644 - INFO - ROC AUC: 0.8360
+2025-05-03 15:03:49,644 - INFO - 
+Mejores parámetros Random Forest: {'class_weight': 'balanced', 'max_depth': 15, 'min_samples_split': 10, 'n_estimators': 200}
+2025-05-03 15:03:49,699 - INFO - MLflow run finalizado correctamente
+2025-05-03 15:03:49,699 - INFO - 
+Probando el modelo cargado...
+2025-05-03 15:03:49,833 - INFO - Ejemplo de entrada seleccionado: [ 1.54511652  3.06565748 -0.23881603 -0.31886805  0.28709013 -0.84155448
+ -0.0167225   0.71766009 -0.05801775  0.8660254  -0.44398403 -0.39415956
+ -1.00814049 -0.46280528 -0.76796991  2.38452958]
+2025-05-03 15:03:49,833 - INFO - Valor real: 0
+2025-05-03 15:03:49,849 - INFO - Probabilidad de stroke: 0.2049
+2025-05-03 15:03:49,849 - INFO - Clase predicha: 0
+2025-05-03 15:03:49,849 - INFO - 
+Registrando el modelo para producción...
+2025-05-03 15:03:49,944 - INFO - Se ha creado el modelo registrado stroke_prediction_model_prod
+2025-05-03 15:03:49,944 - INFO - Usando run_id: defbf7e46da548b6afffd34f88590806
+2025-05-03 15:03:50,044 - INFO - Se ha registrado la versión 1 del modelo como 'champion'
+2025-05-03 15:03:50,044 - INFO - 
+Proceso completado con éxito!

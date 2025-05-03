@@ -1,0 +1,25 @@
+-- ingresa a al DB 
+-- \c stroke;
+-- Crear la tabla stroke_data
+DROP TABLE IF EXISTS stroke_data;
+CREATE TABLE IF NOT EXISTS stroke_data (
+    id INT,
+    gender VARCHAR(10),
+    age FLOAT,
+    hypertension INT,
+    heart_disease INT,
+    ever_married VARCHAR(5),
+    work_type VARCHAR(20),
+    residence_type VARCHAR(10),
+    avg_glucose_level FLOAT,
+    bmi FLOAT, -- Mantener FLOAT
+    smoking_status VARCHAR(20),
+    stroke INT);
+
+-- Cargar datos y manejar valores inválidos
+\copy stroke_data FROM '/docker-entrypoint-initdb.d/healthcare-dataset-stroke-data.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', NULL 'N/A');
+-- \copy stroke_data FROM '/opt/airflow/dataset/healthcare-dataset-stroke-data.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', NULL 'N/A');
+-- Renombrar a patient_data para mantener compatibilidad con la aplicación
+--ALTER TABLE stroke_data RENAME TO patient_data;
+
+
